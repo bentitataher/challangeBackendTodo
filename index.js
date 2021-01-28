@@ -12,8 +12,10 @@ mongoose.Promise = global.Promise;
 app.use(bodyParser.json());
 
 // initiliaze routes
-app.use('/api',require('./routes/todoApi'));
-app.use('/api',require('./routes/userApi'));
+app.use('/todos',require('./routes/todoApi'));
+app.use('/users',require('./routes/userApi'));
+app.use('/email',require('./routes/mailApi'));
+app.use('/image',require('./routes/imageApi'));
 
 // error handling middelwere
 app.use(function(err, req, res, next){

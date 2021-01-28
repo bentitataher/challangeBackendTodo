@@ -11,6 +11,7 @@ const UserSchema = new Schema({
         type: String,
         required: [true, 'Il faut définir un mot de passe'],
     },
+    todos: [{type: Schema.Types.ObjectId, ref: 'todo'}]
 });
 
 
