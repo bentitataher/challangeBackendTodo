@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 app.use('/todos',require('./routes/todoApi'));
 app.use('/users',require('./routes/userApi'));
 app.use('/email',require('./routes/mailApi'));
+app.use('/email-cron',require('./routes/nodecron'));
 app.use('/image',require('./routes/imageApi'));
+app.use('/auth',require('./routes/authApi'));
 
 // error handling middelwere
 app.use(function(err, req, res, next){
