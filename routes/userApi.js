@@ -1,9 +1,10 @@
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
 const User = require('../models/user');
 
 // get list of users from the db
-router.get('/', function(req, res, next){
+router.get('/', passport.authenticate('bearer', { session: false }) , (req, res)=>{
   User.find({}).then(function(users){
       res.send(users);
   });

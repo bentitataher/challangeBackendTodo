@@ -2,11 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// import passport
+const passport =  require('./passport')
+
 //set up express app
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/projet');
+const connexionOptions = {useNewUrlParser: true, useUnifiedTopology: true}
+mongoose.connect('mongodb://localhost/projet', connexionOptions);
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
